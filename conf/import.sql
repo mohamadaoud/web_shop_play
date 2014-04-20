@@ -1,5 +1,3 @@
-
-
 insert into Category (name) values ('Houses');
 insert into Category (name) values ('Electronics');
 insert into Category (name) values ('Men and Women Clothes');
@@ -11,6 +9,7 @@ insert into Product (name, description, cost, RRP, quantity) values ('Toshiba', 
 insert into Product (name, description, cost, RRP, quantity) values ('Levis Jacket','Size 48 suitable for men', 800.00, 1000.00, 20);
 insert into Product (name, description, cost, RRP, quantity) values ('Cleaning', 'Service available 24/7', 300.00, 320.00, 100);
 
+insert into User (name, username, password, address, phoneNumber) values ('Mohamad', 'mdaoud', 'admin', 'Stockholm', '011117343');
 
 insert into Product_Category (product_id, category_id) values (1, 1);
 insert into Product_Category (product_id, category_id) values (2, 2);
@@ -20,5 +19,3 @@ insert into Product_Category (product_id, category_id) values (3, 4);
 insert into Product_Category (product_id, category_id) values (5, 4);
 insert into Product_Category (product_id, category_id) values (4, 3);
 insert into Product_Category (product_id, category_id) values (5, 3);
-
-insert into User (name, username, password, address, phoneNumber) values ('Mohamad', 'mdaoud', 'admin', 'Stockholm', '011117343');
