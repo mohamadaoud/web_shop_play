@@ -1,0 +1,35 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET		/							controllers.Application.main()
+GET   	/index            			controllers.Application.main()
+
+GET   	/products             		controllers.ProductController.getProducts()
+GET   	/product/:id             	controllers.ProductController.getProduct(id: Int)
+GET    	/display-products           controllers.UserController.products()
+GET     /new-product		        controllers.CreateProduct.createProductForm()
+POST	/new-product		        controllers.CreateProduct.createProduct()
+
+GET   	/categories             	controllers.CategoryController.getCategories()
+GET   	/category/:id             	controllers.CategoryController.getCategory(id: Int)
+GET    	/display-categories         controllers.UserController.categories()
+GET    	/new-category		        controllers.CreateCategory.createCategoryForm()
+POST	/new-category		        controllers.CreateCategory.createCategory()
+
+GET 	/registration				controllers.CreateUser.createUserForm()
+POST 	/registration				controllers.CreateUser.createUser()
+GET   	/user-login	    			controllers.UserController.userForm()
+POST   	/user-login 				controllers.UserController.userLogin()
+GET    	/user/	     		  		controllers.Application.main()
+GET    	/user-login          		controllers.UserController.userLogout()     
+
+GET		/shoppping-basket			controllers.ShoppingBasketController.getShoppingBasket()
+POST    /product/:id                controllers.ShoppingBasketController.addProduct(id: Int)
+
+GET 	/display-order			    controllers.OrderController.order()
+GET     /order                      controllers.OrderController.createOrder()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)

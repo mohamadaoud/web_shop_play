@@ -1,0 +1,27 @@
+@(category: Category) 
+
+@index("Category") {
+	
+	<h3>@category.getName</h3>
+	
+	
+	
+	<hr></hr>
+	
+	<h4>Products in this category:</h4>
+	
+	<div class="row">
+		@for(product <- category.product){
+			<div class="col-md-4" align="left">								
+				
+				<div class="caption">	
+					<a href="/product/@product.getId"><h4>@product.getName</h4></a> 
+					@product.getDescription. 
+					<h4>Price: @product.getCost</h4>
+					<p><a href="@routes.ProductController.getProduct(product.getId)"  role="button"> Add to basket</a></p>
+				</div>			
+			</div>
+		}
+	</div>
+
+}

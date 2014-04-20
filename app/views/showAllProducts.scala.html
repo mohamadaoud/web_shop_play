@@ -1,0 +1,26 @@
+@(products: List[Product])
+
+@index("Products") {
+	
+	<h2><a href="@routes.CreateProduct.createProduct()"><h5>Register a product</h5></a></h2>
+	<br>
+	<h4>All products</h4>
+	<hr></hr>
+				   	
+	<div class="row">	
+		@for(product <- products){
+			<div class="col-md-4" align="left">									
+				
+				<div class="caption">
+					<a href="/product/@product.getId"><p>@product.getName</p></a>
+					@product.getDescription
+					<br>
+					 
+					Price: @product.getCost <p></p>		
+					<p><a href="@routes.ProductController.getProduct(product.getId)"  role="button">Add to basket</a></p>
+				</div>								
+			</div>					
+		}				
+	</div>
+			
+}

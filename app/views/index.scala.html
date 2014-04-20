@@ -1,0 +1,70 @@
+@(title: String)(content: Html)
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8">	
+	<title>@title</title>
+	
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="assets/stylesheets/base.css" />
+</head><body>
+	@topmenu()
+
+	<div id="container">
+	<div id="page">
+		<!-- ==== START MASTHEAD ==== -->
+		<header id="masthead" role="banner" class="clearfix">
+
+
+			<div>
+				<nav role="navigation">
+					<ul class="nav">
+						<li><a href="/" class="current">home</a></li>
+						<li><a href="/products">Products</a></li>
+						<li><a href="/categories">Categories</a></li>
+						<li><a href="/shoppping-basket">Shopping Basket</a></li>
+					</ul>
+
+				</nav>
+
+
+			</div>
+		</header>
+		<!-- end #masthead -->
+
+		<!-- ==== START MAIN CONTENT ==== -->
+		<div id="main" role="main">
+			
+
+			<!-- Start Entry #1 -->
+			<section class="entry">
+				<header>
+					@content
+				</header>
+
+
+			</section>
+			<!-- end .entry #3 -->
+		</div>
+		<!-- end #main content -->
+
+		<!-- ==== START SIDEBAR ==== -->
+
+		 <!-- end #related .sidebar -->	
+
+		<!-- ==== START FOOTER ==== -->
+		<footer id="footer" role="contentinfo">
+			<h1></h1>
+		</footer>
+		<!-- end #footer -->
+	</div>
+	<!-- #page -->	
+</div>
+<!-- #container -->	
+</body></html>
+

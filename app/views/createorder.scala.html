@@ -1,0 +1,32 @@
+@(order : Order, shoppingBasket : List[ShoppingBasket], products : List[Product])
+
+@index("Order") {
+	
+	<br><h4>Order</h4>
+	
+	<hr></hr>				
+		
+	<table class="table">		
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Quantity</th>
+				<th>Total costs</th>
+			</tr>
+		</thead>
+		<tbody>			
+			@for(basket <- shoppingBasket){	
+				@for(product <- products){
+					@if(basket.getProduct_id == product.getId){
+						<tr>
+						<th><h6>@product.getName</h6></th>
+						<th><h6>@basket.getQuantity</h6></th>
+						<th><h6>@product.getCost</h6></th>
+						</tr>
+					}
+				}
+			}	
+		</tbody>			
+	</table>
+
+}

@@ -1,0 +1,40 @@
+@(product : Product) 
+
+@index("Product") {
+	
+	
+	
+	<ol>
+ 	@for(category <- product.category){
+		
+			<a href="/category/@category.getId"><h4>@category.getName Category</h4></a> 
+			
+		
+	}
+	</ol>
+	
+	<hr></hr>
+	
+	<br><div class="row">	
+		<div class="col-md-4" align="left">
+			
+			<div class="caption">			
+				<h4>@product.getName</h4>
+				<h5>Description: @product.getDescription</h5>
+				
+				<h4>Price: @product.getCost</h4>
+			</div>	
+		</div>			
+		<div class="col-md-3">		
+			
+			<form action="@routes.ShoppingBasketController.addProduct(product.getId)" method="post" role="form">
+			  <div class="form-group">			
+			  <label for="product-quantity"><h4>Product</h4></label>		    
+			    <input type="number" class="form-control" id="product-quantity" name="quantity" placeholder="quantity"> <h5>(Hint: quantities in webshop): <u>@product.getQuantity</u></h5>
+			  </div>
+			  <button type="submit"> Add to basket</button>
+			</form>
+		</div>										
+	</div>		
+		
+}

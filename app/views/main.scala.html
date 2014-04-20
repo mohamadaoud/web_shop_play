@@ -1,0 +1,28 @@
+@(categories: List[Category])
+
+@index("Main page") {
+	
+		@for(category <- categories){										
+		
+			<h4><a href="/category/@category.getId"><h3>@category.getName Products</h3></a></h4>
+			
+			          	
+			<div class="row">	
+			
+				@for(product <- category.product){	 
+					<div class="col-md-4" align="left">									  				    						  				    
+												      
+						<div class="caption">
+							<a href="/product/@product.getId"><p>@product.getName</p></a>
+							@product.getDescription
+							<br>
+							Price: @product.getCost <p></p>		
+							<p id="add-to-cart"><a href="@routes.ProductController.getProduct(product.getId)"  role="button">Add to basket</a></p>
+						</div>					      						    							    			    				    						 
+					 </div>
+				 }
+	 
+			 </div> 	     			 
+		 }
+	
+}

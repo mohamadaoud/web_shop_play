@@ -1,0 +1,24 @@
+@(categories: List[Category])
+
+@index("Categories") {
+	
+		<h2><a href="@routes.CreateCategory.createCategory()"><h5>Register a category</h5></a></h2>
+		<br>
+		<h4>All categories</h4>
+		
+		<hr></hr>
+		
+		<div class="row">	
+		@for(category <- categories){
+			<div class="col-md-4" align="left">	
+				<div class="caption">
+					<p><a href="/category/@category.getId"><h4>@category.getName</h4></a></p>
+						
+				</div>								
+			</div>	
+			
+		}		
+		
+		</div>
+		
+}
